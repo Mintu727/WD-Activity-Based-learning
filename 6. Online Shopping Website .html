@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Shopping Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #37475a;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        
+        .search {
+            text-align: center;
+            padding: 15px;
+            background: white;
+        }
+
+        .search input {
+            width: 60%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+       
+        .banner {
+            background: linear-gradient(90deg, #ff9800, #ff5722);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .banner h1 {
+            margin-bottom: 10px;
+        }
+
+        
+        .container {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #232f3e;
+            margin-bottom: 20px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .category {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #ddd;
+        }
+
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        
+        .product {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            color: #232f3e;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #e65100;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            color: gray;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+
+        .discount {
+            color: green;
+            font-weight: bold;
+            margin: 8px;
+        }
+
+        .rating {
+            color: #f39c12;
+            margin: 8px;
+        }
+
+        
+        button {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background: #e65100;
+        }
+
+       
+        .offer {
+            background: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+       
+        @media(max-width: 900px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 500px) {
+            .products, .categories {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .search input {
+                width: 90%;
+            }
+
+            .banner {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    
+    <header>
+        <h1>MY ONLINE STORE</h1>
+        <p>Shop Smart | Shop Easy | Shop More</p>
+    </header>
+
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+        <a href="#cart">Cart 🛒</a>
+    </nav>
+
+   
+    <div class="search">
+        <input type="text" placeholder="Search for products...">
+    </div>
+
+    
+    <div class="banner" id="home">
+        <h1>MEGA SHOPPING SALE!</h1>
+        <h2>Up to 50% OFF</h2>
+        <p>Special discounts on electronics, fashion and more!</p>
+        <button>Shop Now</button>
+    </div>
+
+    <div class="container">
+
+        
+        <h2 id="categories">Shop By Categories</h2>
+
+        <div class="categories">
+
+            <div class="category">
+                <h3>Electronics</h3>
+                <p>Mobiles, Laptops</p>
+            </div>
+
+            <div class="category">
+                <h3>Fashion</h3>
+                <p>Clothes, Shoes</p>
+            </div>
+
+            <div class="category">
+                <h3>Accessories</h3>
+                <p>Watches, Bags</p>
+            </div>
+
+            <div class="category">
+                <h3>Home Appliances</h3>
+                <p>TV, Fridge</p>
+            </div>
+
+        </div>
+
+        
+        <h2 id="products" style="margin-top:30px;">
+            Featured Products
+        </h2>
+
+        <div class="products">
+
+            
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300"
+                     alt="Headphones">
+
+                <h3>Wireless Headphones</h3>
+
+                <p class="description">
+                    High-quality sound with comfortable design.
+                </p>
+
+                <p class="rating">★★★★☆ (4.5)</p>
+
+                <p class="price">₹1,499</p>
+                <p class="old-price">₹2,999</p>
+                <p class="discount">50% OFF</p>
+
+                <button>Add to Cart</button>
+                <button>Buy Now</button>
+            </div>
+
+           
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300"
+                     alt="Watch">
+
+                <h3>Smart Watch</h3>
+
+                <p class="description">
+                    Stylish smartwatch with fitness tracking.
+                </p>
+
+                <p class="rating">★★★★★ (5.0)</p>
+
+                <p class="price">₹2,499</p>
+                <p class="old-price">₹4,999</p>
+                <p class="discount">50% OFF</p>
+
+                <button>Add to Cart</button>
+                <button>Buy Now</button>
+            </div>
+
+            
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300"
+                     alt="Shoes">
+
+                <h3>Sports Shoes</h3>
+
+                <p class="description">
+                    Comfortable shoes for running and walking.
+                </p>
+
+                <p class="rating">★★★★☆ (4.2)</p>
+
+                <p class="price">₹1,999</p>
+                <p class="old-price">₹3,999</p>
+                <p class="discount">50% OFF</p>
+
+                <button>Add to Cart</button>
+                <button>Buy Now</button>
+            </div>
+
+            
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300"
+                     alt="Mobile Phone">
+
+                <h3>Smartphone</h3>
+
+                <p class="description">
+                    Modern smartphone with excellent camera.
+                </p>
+
+                <p class="rating">★★★★☆ (4.4)</p>
+
+                <p class="price">₹12,999</p>
+                <p class="old-price">₹16,999</p>
+                <p class="discount">23% OFF</p>
+
+                <button>Add to Cart</button>
+                <button>Buy Now</button>
+            </div>
+
+        </div>
+
+       
+        <div class="offer" id="offers">
+            <h1>EXTRA 20% DISCOUNT</h1>
+            <p>Special offer for new customers!</p>
+            <p>Limited Time Shopping Offer</p>
+            <button>Explore Offers</button>
+        </div>
+
+        
+        <h2>More Products</h2>
+
+        <div class="products">
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300"
+                     alt="Camera">
+                <h3>Digital Camera</h3>
+                <p class="description">Capture beautiful moments.</p>
+                <p class="rating">★★★★☆ (4.3)</p>
+                <p class="price">₹8,999</p>
+                <p class="discount">30% OFF</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=300"
+                     alt="Earphones">
+                <h3>Wireless Earbuds</h3>
+                <p class="description">Clear sound and easy connectivity.</p>
+                <p class="rating">★★★★★ (4.8)</p>
+                <p class="price">₹999</p>
+                <p class="discount">40% OFF</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300"
+                     alt="T Shirt">
+                <h3>Casual T-Shirt</h3>
+                <p class="description">Comfortable everyday clothing.</p>
+                <p class="rating">★★★★☆ (4.1)</p>
+                <p class="price">₹499</p>
+                <p class="discount">25% OFF</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300"
+                     alt="Handbag">
+                <h3>Fashion Handbag</h3>
+                <p class="description">Stylish handbag for daily use.</p>
+                <p class="rating">★★★★☆ (4.4)</p>
+                <p class="price">₹1,299</p>
+                <p class="discount">35% OFF</p>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+</body>
+</html>
