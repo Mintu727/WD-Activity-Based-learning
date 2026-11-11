@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Academic Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+        }
+
+        
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background: #243447;
+            color: white;
+            position: fixed;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            margin: 8px 0;
+            background: #34495e;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background: #3498db;
+        }
+
+        
+        .main {
+            margin-left: 240px;
+            padding: 25px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #243447;
+        }
+
+       
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 180px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .card h3 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 24px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            color: #243447;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+        }
+
+        
+        .progress {
+            background: #ddd;
+            height: 12px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #2ecc71;
+            border-radius: 10px;
+        }
+
+        .announcement {
+            padding: 12px;
+            background: #eef6ff;
+            border-left: 4px solid #3498db;
+            margin-bottom: 10px;
+        }
+
+        
+        @media (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    
+    <div class="sidebar">
+        <h2>Student Portal</h2>
+        <a href="#home">Dashboard</a>
+        <a href="#student">Student Details</a>
+        <a href="#results">Semester Results</a>
+        <a href="#attendance">Attendance</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#exams">Exam Schedule</a>
+        <a href="#announcements">Announcements</a>
+    </div>
+
+    
+    <div class="main" id="home">
+
+        <h1>Student Academic Dashboard</h1>
+
+        
+        <div class="section" id="student">
+            <h2>Student Details</h2>
+            <p><b>Name:</b> Rahul Kumar</p>
+            <p><b>Roll Number:</b> 23CS101</p>
+            <p><b>Department:</b> Computer Science</p>
+            <p><b>Year:</b> Second Year</p>
+            <p><b>Semester:</b> IV</p>
+        </div>
+
+        
+        <div class="cards">
+
+            <div class="card">
+                <h3>CGPA</h3>
+                <p>8.5</p>
+            </div>
+
+            <div class="card">
+                <h3>Attendance</h3>
+                <p>85%</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Subjects</h3>
+                <p>6</p>
+            </div>
+
+            <div class="card">
+                <h3>Backlogs</h3>
+                <p>0</p>
+            </div>
+
+        </div>
+
+        
+        <div class="section" id="results">
+            <h2>Semester Results</h2>
+
+            <table>
+                <tr>
+                    <th>Semester</th>
+                    <th>Percentage</th>
+                    <th>SGPA</th>
+                    <th>Result</th>
+                </tr>
+
+                <tr>
+                    <td>Semester 1</td>
+                    <td>82%</td>
+                    <td>8.2</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>Semester 2</td>
+                    <td>85%</td>
+                    <td>8.5</td>
+                    <td>Pass</td>
+                </tr>
+
+                <tr>
+                    <td>Semester 3</td>
+                    <td>88%</td>
+                    <td>8.8</td>
+                    <td>Pass</td>
+                </tr>
+            </table>
+        </div>
+
+        
+        <div class="section" id="attendance">
+            <h2>Attendance Percentage</h2>
+
+            <p>Python Programming - 90%</p>
+            <div class="progress">
+                <div class="progress-bar" style="width:90%"></div>
+            </div><br>
+
+            <p>Mathematics - 80%</p>
+            <div class="progress">
+                <div class="progress-bar" style="width:80%"></div>
+            </div><br>
+
+            <p>Database Management - 85%</p>
+            <div class="progress">
+                <div class="progress-bar" style="width:85%"></div>
+            </div><br>
+
+            <p>Computer Networks - 75%</p>
+            <div class="progress">
+                <div class="progress-bar" style="width:75%"></div>
+            </div>
+        </div>
+
+        
+        <div class="section" id="subjects">
+            <h2>Subject Information</h2>
+
+            <table>
+                <tr>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Faculty</th>
+                </tr>
+
+                <tr>
+                    <td>CS401</td>
+                    <td>Python Programming</td>
+                    <td>Mr. Kumar</td>
+                </tr>
+
+                <tr>
+                    <td>CS402</td>
+                    <td>Database Management</td>
+                    <td>Mrs. Priya</td>
+                </tr>
+
+                <tr>
+                    <td>CS403</td>
+                    <td>Computer Networks</td>
+                    <td>Mr. Raj</td>
+                </tr>
+
+                <tr>
+                    <td>MA401</td>
+                    <td>Mathematics</td>
+                    <td>Mrs. Anitha</td>
+                </tr>
+            </table>
+        </div>
+
+        
+        <div class="section" id="exams">
+            <h2>Examination Schedule</h2>
+
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+
+                <tr>
+                    <td>Python Programming</td>
+                    <td>20-11-2026</td>
+                    <td>10:00 AM</td>
+                </tr>
+
+                <tr>
+                    <td>Mathematics</td>
+                    <td>22-11-2026</td>
+                    <td>10:00 AM</td>
+                </tr>
+
+                <tr>
+                    <td>Database Management</td>
+                    <td>24-11-2026</td>
+                    <td>10:00 AM</td>
+                </tr>
+            </table>
+        </div>
+
+       
+        <div class="section" id="announcements">
+            <h2>Announcements</h2>
+
+            <div class="announcement">
+                <b>Exam Notification:</b>
+                Semester examinations start from November 20.
+            </div>
+
+            <div class="announcement">
+                <b>Attendance:</b>
+                Maintain at least 75% attendance.
+            </div>
+
+            <div class="announcement">
+                <b>Assignment:</b>
+                Submit Python assignments before November 15.
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
